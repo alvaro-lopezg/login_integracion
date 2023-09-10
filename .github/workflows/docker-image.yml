@@ -18,7 +18,6 @@ jobs:
     - name: Git Semantic Version
       uses: PaulHatch/semantic-version@v4.0.3
       with:
-        tag_prefix: "v"
         major_pattern: "major:"
         minor_pattern: "feat:"
         patch_pattern: "patch:"
@@ -35,13 +34,13 @@ jobs:
         
     - name: Build Docker Image
       env:
-        NEW_VERSION: v${{ steps.version.outputs.version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker build -t alopezgsource/login_integracion:$NEW_VERSION ./Integracion/
   
           
     - name: Push Docker Image
       env:
-        NEW_VERSION: v${{ steps.version.outputs.version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker push alopezgsource/login_integracion:$NEW_VERSION
