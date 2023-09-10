@@ -19,7 +19,6 @@ jobs:
       uses: PaulHatch/semantic-version@v4.0.3
       with:
         tag_prefix: "v"
-        bump_each_commit: true
         major_pattern: "major:"
         minor_pattern: "feat:"
         patch_pattern: "patch:"
@@ -36,7 +35,7 @@ jobs:
         
     - name: Build Docker Image
       env:
-        NEW_VERSION: ${{ steps.version.outputs.version }}
+        NEW_VERSION: v${{ steps.version.outputs.version }}
       run: |
         docker build -t alopezgsource/login_integracion:$NEW_VERSION ./Integracion/
   
