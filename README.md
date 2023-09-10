@@ -4,7 +4,7 @@ Basic login with flask
 
 Dependencies to be used can be found in requirments.txt
 
-## Description detailed
+## Details
 
 Easy flask login
 
