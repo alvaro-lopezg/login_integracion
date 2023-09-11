@@ -30,7 +30,7 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-    return '¡Bienvenido al panel de control!'
+    return '¡Welcome to Dashboard!'
 
 
 if __name__ == '__main__':
