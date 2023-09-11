@@ -44,4 +44,4 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker push alopezgsource/login_integracion:$NEW_VERSION
+        docker push alopezgsource/login_integracion:4
