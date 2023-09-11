@@ -37,7 +37,7 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker build -t alopezgsource/login_integracion:$NEW_VERSION ./Integracion/
+        docker build -t alopezgsource/login_integracion:4 ./Integracion/
   
           
     - name: Push Docker Image
